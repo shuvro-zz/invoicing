@@ -28,7 +28,8 @@ class InvoiceItem extends Model implements Auditable
     {
         setlocale(LC_MONETARY, 'en_US.UTF-8');
 
-        return money_format('%!.2n', $this->price);
+        //return money_format('%!.2n', $this->price);
+		return number_format($this->price, 2);
     }
 
     public function modified($name, $description, $quantity, $price)
